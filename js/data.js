@@ -53,8 +53,8 @@ const timelineEvents = [
     {
         date: '1905',
         title: 'Sterling Sugar Company Factory Built',
-        description: 'Beet-processing factory construction triggered "unprecedented growth."',
-        impact: 'This single event transformed Iliff\'s economy. The sugar beet industry would sustain the town for the next 80 years, driving population growth, business development, and agricultural expansion throughout the region.',
+        description: 'Beet-processing factory in nearby Sterling, Colorado triggered "unprecedented growth" in Iliff and the surrounding agricultural region.',
+        impact: 'This single event transformed Iliff\'s economy. Though located in Sterling (12 miles away), the sugar beet industry would sustain Iliff and surrounding farms for the next 80 years, driving population growth, business development, and agricultural expansion throughout the region.',
         category: 'industry'
     },
     {
@@ -115,9 +115,9 @@ const timelineEvents = [
     },
     {
         date: '1985',
-        title: 'Sugar Factory Closure',
+        title: 'Sterling Sugar Factory Closure',
         description: 'Great Western Sugar Company bankruptcy; Sterling factory closes.',
-        impact: 'Catastrophic end of 80-year economic foundation. Without the sugar beet processing infrastructure, Iliff lost its primary reason for economic existence. The agricultural system that had sustained the town since 1905 collapsed entirely.',
+        impact: 'Catastrophic end of 80-year economic foundation. Without the sugar beet processing infrastructure in nearby Sterling, Iliff lost its primary reason for economic existence. Farmers in Iliff and surrounding areas had no local market for their crops. The agricultural system that had sustained the town since 1905 collapsed entirely.',
         category: 'industry'
     },
     {
