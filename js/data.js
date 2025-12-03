@@ -13,6 +13,12 @@ const sugarBeetData = {
     labels: ['1910\n5,352 acres', '1929\n14,623 acres (Peak)', '1985\nFactory Closure']
 };
 
+// Business data over time
+const businessData = {
+    years: [1900, 1957, 1970, 2000],
+    businesses: [15, 11, 7, 3]
+};
+
 // Timeline of major events that affected Iliff
 // Organized by category: infrastructure, industry, disaster, demographics
 const timelineEvents = [

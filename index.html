@@ -9,9 +9,23 @@
 </head>
 <body>
     <header>
-        <h1>Boom and Bust: Visualizing Economic Cycles in Small-Town Agricultural Colorado, 1900-2020</h1>
-        <p class="byline">A Digital Humanities Project by Evan | ENGL 326, Kansas State University</p>
+        <div class="header-content">
+            <h1>Boom and Bust: Visualizing Economic Cycles in Small-Town Agricultural Colorado, 1900-2020</h1>
+            <p class="byline">A Digital Humanities Project by Evan | ENGL 326, Kansas State University</p>
+            <p class="subtitle">Iliff, Colorado: A Computational Analysis of Rural Economic Patterns</p>
+        </div>
     </header>
+
+    <nav class="nav-bar" id="navbar">
+        <div class="nav-container">
+            <a href="#introduction" class="nav-link">Introduction</a>
+            <a href="#historical-context" class="nav-link">Historical Context</a>
+            <a href="#data-visualizations" class="nav-link">Data</a>
+            <a href="#timeline" class="nav-link">Timeline</a>
+            <a href="#analysis" class="nav-link">Analysis</a>
+            <a href="#sources" class="nav-link">Sources</a>
+        </div>
+    </nav>
 
     <main>
         <section id="introduction">
@@ -25,108 +39,121 @@
 
         <section id="historical-context">
             <h2>Historical Context</h2>
-            <div class="context-grid">
-                <div class="context-item">
-                    <h3>Founded</h3>
-                    <p>1887 (platted), 1906 (incorporated)</p>
+            <div class="context-list">
+                <div class="context-item-list founded">
+                    <span class="bullet"></span>
+                    <div class="context-content">
+                        <strong>Founded:</strong> 1887, Incorporated 1906
+                    </div>
                 </div>
-                <div class="context-item">
-                    <h3>Named For</h3>
-                    <p>John Wesley Iliff, "Cattle King of Colorado"</p>
+                <div class="context-item-list namesake">
+                    <span class="bullet"></span>
+                    <div class="context-content">
+                        <strong>Namesake:</strong> John Wesley Iliff (1831-1878), "Cattle King of Colorado," who owned ~35,000 head of cattle and 15,558 acres
+                    </div>
                 </div>
-                <div class="context-item">
-                    <h3>Economic Drivers</h3>
-                    <p>Railroad (1881), Sugar Beet Industry (1905-1985)</p>
+                <div class="context-item-list economic">
+                    <span class="bullet"></span>
+                    <div class="context-content">
+                        <strong>Economic Foundation:</strong> Railroad (1881), sugar beet industry (1905-1985)
+                    </div>
                 </div>
-                <div class="context-item">
-                    <h3>Decline Factors</h3>
-                    <p>Interstate 76 bypass (1958), Factory closure (1985)</p>
+                <div class="context-item-list decline">
+                    <span class="bullet"></span>
+                    <div class="context-content">
+                        <strong>Decline Catalyst:</strong> Bypassed by Interstate 76 (1958), sugar factory closure (1985)
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="population-visualization">
-            <h2>Population Cycles, 1900-2020</h2>
-            <p class="chart-description">The following chart shows the dramatic population fluctuations in Iliff over 120 years. Hover over data points to see exact values and percentage changes. Major historical events are marked along the timeline.</p>
-            <div class="chart-container">
-                <canvas id="populationChart"></canvas>
-            </div>
-        </section>
+        <section id="data-visualizations">
+            <h2>Primary Data Visualization</h2>
 
-        <section id="sugar-beet-visualization">
-            <h2>The Sugar Beet Era, 1910-1985</h2>
-            <p class="chart-description">Sugar beet agriculture was the economic foundation of Iliff for eight decades. This chart shows the dramatic expansion of sugar beet farming in Logan County.</p>
-            <div class="chart-container">
-                <canvas id="sugarBeetChart"></canvas>
+            <div class="population-section">
+                <h3>Population of Iliff, Colorado (1900-2020)</h3>
+                <div class="chart-container">
+                    <canvas id="populationChart"></canvas>
+                </div>
+                <p class="chart-note">Hover over data points for detailed information. Vertical lines indicate major economic events.</p>
+            </div>
+
+            <div class="dual-charts">
+                <div class="chart-half">
+                    <h3>Sugar Beet Agriculture in Logan County (1910-1985)</h3>
+                    <div class="chart-container-small">
+                        <canvas id="sugarBeetChart"></canvas>
+                    </div>
+                    <p class="chart-caption">The sugar beet industry drove Iliff's economy for 80 years before collapsing in 1985.</p>
+                </div>
+
+                <div class="chart-half">
+                    <h3>Business Establishments Over Time</h3>
+                    <div class="chart-container-small">
+                        <canvas id="businessChart"></canvas>
+                    </div>
+                    <p class="chart-caption">Business decline accelerated after Interstate 76 bypassed the town in 1958.</p>
+                </div>
             </div>
         </section>
 
         <section id="timeline">
-            <h2>Interactive Timeline: Major Events</h2>
-            <p class="timeline-description">Click on events below to learn more about how they shaped Iliff's economic trajectory.</p>
+            <h2>Interactive Timeline of Major Events</h2>
+            <div class="timeline-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="infrastructure">Infrastructure</button>
+                <button class="filter-btn" data-filter="industry">Industry</button>
+                <button class="filter-btn" data-filter="disaster">Natural Disaster</button>
+                <button class="filter-btn" data-filter="demographics">Demographics</button>
+            </div>
             <div id="timeline-container">
-                <!-- Timeline will be generated by JavaScript -->
+                <!-- Timeline generated by JavaScript -->
             </div>
-        </section>
-
-        <section id="business-data">
-            <h2>Business Decline</h2>
-            <div class="business-stats">
-                <div class="stat-card">
-                    <h3>Early 1900s</h3>
-                    <p class="stat-number">Multiple</p>
-                    <p class="stat-detail">Baptist church, school, newspaper, hotel, theater, drugstore, bank, dance hall, agricultural services</p>
-                </div>
-                <div class="stat-card">
-                    <h3>1957</h3>
-                    <p class="stat-number">11</p>
-                    <p class="stat-detail">Peak business count before Interstate 76 bypass</p>
-                </div>
-                <div class="stat-card">
-                    <h3>Post-1958</h3>
-                    <p class="stat-number">Declining</p>
-                    <p class="stat-detail">Residents willing to drive 12 miles to Sterling after highway opened</p>
-                </div>
-            </div>
+            <p class="timeline-note">Click on events to view their economic impact. Filter by category to explore specific factors.</p>
         </section>
 
         <section id="analysis">
-            <h2>Analysis: Three Phases of Economic Cycles</h2>
+            <h2>Computational Analysis: Three Distinct Economic Phases</h2>
 
             <div class="phase-card boom">
                 <h3>Phase 1: Early Growth Era (1900-1940s)</h3>
-                <p>Railroad connectivity and sugar beet industry expansion drove population growth and business development, attracting diverse immigrant labor forces. The Union Pacific Railroad (1881) provided crucial transportation infrastructure, while the Sterling Sugar Company factory (1905) triggered "unprecedented growth." Mexican, German Russian, and Japanese immigrants provided the labor force that sustained agricultural expansion.</p>
+                <p>Railroad connectivity and sugar beet industry expansion drove population growth and business development, attracting diverse immigrant labor forces including German Russians, Japanese workers, and Mexican immigrants.</p>
             </div>
 
             <div class="phase-card transition">
                 <h3>Phase 2: Mid-Century Stability and Decline (1950s-1980s)</h3>
-                <p>Natural disasters (1949 blizzard, 1965 flood), Great Depression impacts, World War II disruptions, and the Interstate 76 bypass (1958) initiated gradual decline. The highway rerouting was particularly devastating—residents no longer needed to stop in Iliff, instead driving directly to Sterling. Business count peaked at 11 in 1957, then steadily declined.</p>
+                <p>Natural disasters (1949 blizzard, 1965 flood), the Great Depression, World War II, and the Interstate 76 bypass (1958) initiated gradual population and economic decline despite continued agricultural activity.</p>
             </div>
 
             <div class="phase-card bust">
-                <h3>Phase 3: Post-Industrial Collapse (1985-present)</h3>
-                <p>The Great Western Sugar Company bankruptcy and Sterling factory closure in 1985 ended the 80-year sugar beet era that had been Iliff's economic foundation. Without the agricultural processing infrastructure, the town lost its primary economic reason for existence. Slight population fluctuations in recent decades suggest ongoing resilience, but the fundamental economic base never recovered.</p>
+                <h3>Phase 3: Post-Industrial Collapse (1985-Present)</h3>
+                <p>The 1985 Great Western Sugar Company bankruptcy and Sterling factory closure ended the 80-year sugar beet era, devastating the economic foundation. Slight population fluctuations (peak of 266 in 2010, decline to 246 by 2020) suggest ongoing resilience but no sustained recovery.</p>
             </div>
 
-            <p class="conclusion-text">This pattern mirrors countless small agricultural towns across the Great Plains—communities whose fates were determined by external infrastructure decisions, corporate agricultural consolidation, and the decline of rural America in the late 20th century.</p>
+            <div class="insight-box">
+                <h3>Digital Humanities Insight</h3>
+                <p>This computational pattern analysis reveals what traditional narrative history cannot effectively demonstrate: Iliff's trajectory mirrors countless small agricultural towns across the Great Plains. External infrastructure decisions (railroad placement, highway routing), corporate agricultural consolidation (sugar factory closure), and the broader decline of rural America in the late 20th century determined community fates more than local agency or effort. The data visualization makes these interconnected forces visible across time, demonstrating the value of computational methods for humanistic inquiry.</p>
+            </div>
         </section>
 
         <section id="sources">
-            <h2>Sources & References</h2>
+            <h2>Sources and References</h2>
             <ul class="sources-list">
-                <li>U.S. Census Bureau. <em>Decennial Census 1900-2020</em>.</li>
-                <li>Colorado Encyclopedia. History Colorado. <a href="https://coloradoencyclopedia.org/" target="_blank">coloradoencyclopedia.org</a></li>
-                <li>U.S. Geological Survey. Documentation of the 1965 South Platte River Flood.</li>
-                <li>National Weather Service. Historical records of January 2, 1949 blizzard and Operation Haylift.</li>
-                <li>Colorado Department of Transportation. Interstate 76 Historical Documentation.</li>
-                <li>Wikipedia. <a href="https://en.wikipedia.org/wiki/Iliff,_Colorado" target="_blank">"Iliff, Colorado."</a> Compiled and edited by Evan for ENGL 326, Kansas State University.</li>
-                <li>Similar Digital Humanities Projects: <a href="https://www.k-state.edu/digitalhumanities/projects.html" target="_blank">K-State Digital Humanities Projects Archive</a></li>
+                <li>U.S. Census Bureau: Decennial Census Data (1900-2020)</li>
+                <li>Colorado Encyclopedia (History Colorado)</li>
+                <li>U.S. Geological Survey: 1965 South Platte River Flood Documentation</li>
+                <li>National Weather Service: 1949 Colorado Blizzard Records</li>
+                <li>Colorado Department of Transportation: Interstate 76 History</li>
+                <li>Wikipedia: <a href="https://en.wikipedia.org/wiki/Iliff,_Colorado" target="_blank">Iliff, Colorado</a> (compiled by Evan for ENGL 326)</li>
+                <li>Logan County Historical Records: Sugar Beet Acreage Data</li>
             </ul>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Evan | Created for ENGL 326: Introduction to Digital Humanities | Kansas State University</p>
+        <p>A Digital Humanities Project for ENGL 326: Introduction to Digital Humanities</p>
+        <p>Kansas State University | December 2025</p>
+        <p class="footer-note">This project demonstrates the application of computational methods to humanistic inquiry, revealing patterns in rural economic history through data visualization.</p>
     </footer>
 
     <script src="js/data.js"></script>
