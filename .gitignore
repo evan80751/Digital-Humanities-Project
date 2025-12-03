@@ -1,0 +1,12 @@
+# macOS files
+.DS_Store
+
+# IDE/Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Other
+.claude/
