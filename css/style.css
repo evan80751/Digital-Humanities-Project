@@ -83,16 +83,42 @@ a:hover {
 
 /* Header */
 header {
-    background: linear-gradient(135deg, var(--prairie-brown) 0%, var(--soil-dark) 100%);
+    position: relative;
     color: var(--off-white);
-    padding: 3rem 2rem 2rem;
+    padding: 0;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.header-banner {
+    width: 100%;
+    overflow: hidden;
+    max-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--soil-dark);
+}
+
+.banner-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-height: 400px;
+    filter: brightness(0.6);
 }
 
 .header-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
     max-width: 1200px;
-    margin: 0 auto;
+    z-index: 10;
+    padding: 2rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
 }
 
 header h1 {
@@ -643,5 +669,70 @@ footer p {
 
     .chart-container-small {
         height: 200px;
+    }
+}
+
+/* Gallery page styles */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.gallery-item {
+    background-color: var(--off-white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(92, 71, 66, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(92, 71, 66, 0.2);
+}
+
+.gallery-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.gallery-caption {
+    padding: 1.5rem;
+}
+
+.gallery-caption h3 {
+    color: var(--prairie-brown);
+    font-size: 1.3rem;
+    margin-bottom: 0.75rem;
+}
+
+.gallery-caption p {
+    color: var(--text-medium);
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .banner-image {
+        max-height: 250px;
+    }
+
+    .header-banner {
+        max-height: 250px;
+    }
+
+    header h1 {
+        font-size: 1.75rem;
+    }
+
+    .header-content {
+        padding: 1rem;
     }
 }
