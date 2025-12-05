@@ -88,16 +88,6 @@ All sources compiled during Wikipedia article research:
 
 Rather than writing a traditional historical narrative, this project applies computational methods to visualize economic patterns across 120 years. The interactive charts reveal how infrastructure decisions, natural disasters, and agricultural industry shifts determined the fate of small agricultural communities. By making these patterns visible through data visualization, the project demonstrates the value of digital tools for humanistic inquiry - showing not just what happened to Iliff, but why small agricultural towns across America followed similar trajectories.
 
-## What I Learned
-
-Working on this project taught me:
-- Chart.js configuration and theming for accessible data visualization
-- How to implement dynamic theme switching that updates chart colors in real-time
-- Data visualization reveals patterns that traditional narrative struggles to convey effectively
-- Small agricultural towns across the Great Plains share remarkably similar economic trajectories shaped by external forces beyond local control
-- Responsive design requires careful consideration of mobile, tablet, and desktop layouts
-- Historical images complement quantitative data by providing visual context
-
 ## Implementation Features
 
 Technical elements include:
@@ -113,10 +103,4 @@ Technical elements include:
 **Course:** ENGL 326 - Introduction to Digital Humanities
 **School:** Kansas State University
 **Semester:** Fall 2025
-**Due Date:** December 17, 2025
 
-## References
-
-Check out other K-State DH projects here: https://www.k-state.edu/digitalhumanities/projects.html
-
-Wikipedia article: https://en.wikipedia.org/wiki/Iliff,_Colorado
