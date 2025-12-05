@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iliff, Colorado: Boom and Bust - Economic Cycles in Small-Town Agricultural America, 1900-2020</title>
+    <title>Iliff, Colorado: Economic Cycles in Small-Town Agricultural America, 1900-2020</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
@@ -13,7 +13,7 @@
             <img src="images/IliffColorado.png" alt="Iliff, Colorado" class="banner-image">
         </div>
         <div class="header-content">
-            <h1>Boom and Bust: Visualizing Economic Cycles in Small-Town Agricultural Colorado, 1900-2020</h1>
+            <h1>Visualizing Economic Cycles in Small-Town Agricultural Colorado, 1900-2020</h1>
             <p class="byline">A Digital Humanities Project by Evan Jelle | ENGL 326, Kansas State University</p>
             <p class="subtitle">Iliff, Colorado: A Computational Analysis of Rural Economic Patterns</p>
         </div>
@@ -26,8 +26,23 @@
             <a href="#data-visualizations" class="nav-link">Data</a>
             <a href="#timeline" class="nav-link">Timeline</a>
             <a href="#analysis" class="nav-link">Analysis</a>
-            <a href="#sources" class="nav-link">Sources</a>
+            <a href="sources.html" class="nav-link">Sources</a>
             <a href="gallery.html" class="nav-link">Gallery</a>
+        </div>
+        <div class="nav-controls">
+            <button class="hamburger" id="hamburger" aria-label="Toggle settings menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="settings-dropdown" id="settings-dropdown">
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark mode">
+                    <span class="theme-label">Dark Mode</span>
+                    <span class="theme-switch">
+                        <span class="theme-slider"></span>
+                    </span>
+                </button>
+            </div>
         </div>
     </nav>
 
@@ -139,19 +154,6 @@
                 <p>This computational pattern analysis reveals what traditional narrative history cannot effectively demonstrate: Iliff's trajectory mirrors countless small agricultural towns across the Great Plains. External infrastructure decisions (railroad placement, highway routing), corporate agricultural consolidation (Sterling sugar factory closure in 1985), and the broader decline of rural America in the late 20th century determined community fates more than local agency or effort. Though Iliff never had its own processing facility, its economy remained entirely dependent on Sterling's factory 12 miles away. The data visualization makes these interconnected forces visible across time, demonstrating the value of computational methods for humanistic inquiry.</p>
             </div>
         </section>
-
-        <section id="sources">
-            <h2>Sources and References</h2>
-            <ul class="sources-list">
-                <li>U.S. Census Bureau: Decennial Census Data (1900-2020)</li>
-                <li>Colorado Encyclopedia (History Colorado)</li>
-                <li>U.S. Geological Survey: 1965 South Platte River Flood Documentation</li>
-                <li>National Weather Service: 1949 Colorado Blizzard Records</li>
-                <li>Colorado Department of Transportation: Interstate 76 History</li>
-                <li>Wikipedia: <a href="https://en.wikipedia.org/wiki/Iliff,_Colorado" target="_blank">Iliff, Colorado</a> (compiled by Evan for ENGL 326)</li>
-                <li>Logan County Historical Records: Sugar Beet Acreage Data</li>
-            </ul>
-        </section>
     </main>
 
     <footer>
@@ -162,5 +164,6 @@
 
     <script src="js/data.js"></script>
     <script src="js/visualizations.js"></script>
+    <script src="js/theme.js"></script>
 </body>
 </html>

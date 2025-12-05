@@ -25,8 +25,23 @@
             <a href="index.html#data-visualizations" class="nav-link">Data</a>
             <a href="index.html#timeline" class="nav-link">Timeline</a>
             <a href="index.html#analysis" class="nav-link">Analysis</a>
-            <a href="index.html#sources" class="nav-link">Sources</a>
+            <a href="sources.html" class="nav-link">Sources</a>
             <a href="gallery.html" class="nav-link">Gallery</a>
+        </div>
+        <div class="nav-controls">
+            <button class="hamburger" id="hamburger" aria-label="Toggle settings menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="settings-dropdown" id="settings-dropdown">
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark mode">
+                    <span class="theme-label">Dark Mode</span>
+                    <span class="theme-switch">
+                        <span class="theme-slider"></span>
+                    </span>
+                </button>
+            </div>
         </div>
     </nav>
 
@@ -51,6 +66,38 @@
                         <p>The modern town sign welcoming visitors to Iliff, Colorado. Despite significant population decline since its peak in the early 1900s, the town remains a testament to the agricultural history of northeastern Colorado.</p>
                     </div>
                 </div>
+
+                <div class="gallery-item">
+                    <img src="images/ColoradoLoganCountyMap.png" alt="Logan County, Colorado Map" class="gallery-image">
+                    <div class="gallery-caption">
+                        <h3>Logan County, Colorado</h3>
+                        <p>Map showing Logan County's location in northeastern Colorado. Carved from Weld County in 1887, the same year Iliff was platted, Logan County became home to thriving agricultural communities supported by the Union Pacific Railroad and the sugar beet industry.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/IliffI76-134Exit.jpg" alt="Interstate 76 Exit 134 for Iliff" class="gallery-image">
+                    <div class="gallery-caption">
+                        <h3>Interstate 76 Exit 134</h3>
+                        <p>Interstate 76 exit sign for Iliff. Originally designated Interstate 80S when construction began in August 1958, the highway bypassed Iliff and drew traffic away from State Highway 138, accelerating the town's economic decline as residents increasingly drove the 12 miles to Sterling for services.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/Highway138.png" alt="State Highway 138" class="gallery-image">
+                    <div class="gallery-caption">
+                        <h3>State Highway 138</h3>
+                        <p>State Highway 138, which runs through Iliff, served as the main transportation corridor before Interstate 76 was constructed in 1958. The interstate bypass diverted through-traffic away from the highway, reducing commercial activity and contributing to the gradual decline of businesses along this historic route.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/IliffWell&PostOffice.jpeg" alt="Historic Iliff Town Well and Post Office" class="gallery-image">
+                    <div class="gallery-caption">
+                        <h3>Historic Town Well and Post Office</h3>
+                        <p>The town pump, installed in 1890, remains in the center of Iliff as a testament to the community's early infrastructure. During the town's growth period in the early 1900s, local institutions like the post office served a thriving community supported by the sugar beet industry and railroad commerce.</p>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
@@ -60,5 +107,7 @@
         <p>Kansas State University | December 2025</p>
         <p class="footer-note">This project demonstrates the application of computational methods to humanistic inquiry, revealing patterns in rural economic history through data visualization.</p>
     </footer>
+
+    <script src="js/theme.js"></script>
 </body>
 </html>

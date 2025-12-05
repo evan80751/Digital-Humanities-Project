@@ -1,3 +1,61 @@
+// Chart instances so we can refresh colors on theme changes
+let populationChart;
+let sugarBeetChart;
+let businessChart;
+
+// Grab CSS custom properties to keep chart text/grid in sync with the theme
+function getChartTheme() {
+    const styles = getComputedStyle(document.body);
+    const readVar = (name, fallback) => (styles.getPropertyValue(name).trim() || fallback);
+
+    return {
+        axisTitle: readVar('--text-dark', '#2C2416'),
+        axisText: readVar('--chart-text', '#4A4238'),
+        grid: readVar('--chart-grid', 'rgba(139, 115, 85, 0.15)'),
+        tooltipBg: readVar('--chart-tooltip-bg', 'rgba(92, 71, 66, 0.92)'),
+        tooltipText: readVar('--chart-tooltip-text', '#F5F1E8'),
+        tooltipBorder: readVar('--chart-tooltip-border', '#D4A574')
+    };
+}
+
+function applyThemeToChart(chart) {
+    if (!chart) return;
+
+    const colors = getChartTheme();
+    const tooltipOptions = chart.options.plugins?.tooltip;
+
+    if (tooltipOptions) {
+        tooltipOptions.backgroundColor = colors.tooltipBg;
+        tooltipOptions.titleColor = colors.tooltipText;
+        tooltipOptions.bodyColor = colors.tooltipText;
+        tooltipOptions.borderColor = colors.tooltipBorder;
+    }
+
+    const scales = chart.options.scales || {};
+    Object.keys(scales).forEach(axis => {
+        const scale = scales[axis];
+        if (!scale) return;
+        if (scale.title) {
+            scale.title.color = colors.axisTitle;
+        }
+        if (scale.ticks) {
+            scale.ticks.color = colors.axisText;
+        }
+        if (scale.grid) {
+            scale.grid.color = colors.grid;
+        }
+    });
+
+    chart.update('none');
+}
+
+function refreshChartThemes() {
+    [populationChart, sugarBeetChart, businessChart].forEach(applyThemeToChart);
+}
+
+// Expose theme refresh so the toggle can call it
+window.refreshChartThemes = refreshChartThemes;
+
 // Wait for page to load before running the scripts
 document.addEventListener('DOMContentLoaded', function() {
     initializePopulationChart();
@@ -5,6 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeBusinessChart();
     initializeTimeline();
     initializeFilters();
+    refreshChartThemes();
 });
 
 // Population chart - shows the boom/bust cycles
@@ -17,7 +76,9 @@ function initializePopulationChart() {
     gradient.addColorStop(0.5, 'rgba(193, 154, 107, 0.4)');
     gradient.addColorStop(1, 'rgba(107, 107, 107, 0.2)');
 
-    const populationChart = new Chart(ctx, {
+    const colors = getChartTheme();
+
+    populationChart = new Chart(ctx, {
         type: 'line',
         data: {
             labels: populationData.years,
@@ -44,10 +105,10 @@ function initializePopulationChart() {
                     display: false
                 },
                 tooltip: {
-                    backgroundColor: 'rgba(92, 71, 66, 0.9)',
-                    titleColor: '#F5F1E8',
-                    bodyColor: '#F5F1E8',
-                    borderColor: '#D4A574',
+                    backgroundColor: colors.tooltipBg,
+                    titleColor: colors.tooltipText,
+                    bodyColor: colors.tooltipText,
+                    borderColor: colors.tooltipBorder,
                     borderWidth: 2,
                     padding: 12,
                     displayColors: false,
@@ -78,13 +139,13 @@ function initializePopulationChart() {
                             size: 14,
                             weight: '600'
                         },
-                        color: '#5C4742'
+                        color: colors.axisTitle
                     },
                     ticks: {
-                        color: '#4A4238'
+                        color: colors.axisText
                     },
                     grid: {
-                        color: 'rgba(139, 115, 85, 0.1)'
+                        color: colors.grid
                     }
                 },
                 x: {
@@ -95,13 +156,13 @@ function initializePopulationChart() {
                             size: 14,
                             weight: '600'
                         },
-                        color: '#5C4742'
+                        color: colors.axisTitle
                     },
                     ticks: {
-                        color: '#4A4238'
+                        color: colors.axisText
                     },
                     grid: {
-                        color: 'rgba(139, 115, 85, 0.1)'
+                        color: colors.grid
                     }
                 }
             }
@@ -113,7 +174,9 @@ function initializePopulationChart() {
 function initializeSugarBeetChart() {
     const ctx = document.getElementById('sugarBeetChart').getContext('2d');
 
-    const sugarBeetChart = new Chart(ctx, {
+    const colors = getChartTheme();
+
+    sugarBeetChart = new Chart(ctx, {
         type: 'bar',
         data: {
             labels: ['1910', '1929', '1985'],
@@ -141,10 +204,10 @@ function initializeSugarBeetChart() {
                     display: false
                 },
                 tooltip: {
-                    backgroundColor: 'rgba(92, 71, 66, 0.9)',
-                    titleColor: '#F5F1E8',
-                    bodyColor: '#F5F1E8',
-                    borderColor: '#D4A574',
+                    backgroundColor: colors.tooltipBg,
+                    titleColor: colors.tooltipText,
+                    bodyColor: colors.tooltipText,
+                    borderColor: colors.tooltipBorder,
                     borderWidth: 2,
                     padding: 12,
                     displayColors: false,
@@ -169,21 +232,21 @@ function initializeSugarBeetChart() {
                             size: 12,
                             weight: '600'
                         },
-                        color: '#5C4742'
+                        color: colors.axisTitle
                     },
                     ticks: {
-                        color: '#4A4238',
+                        color: colors.axisText,
                         callback: function(value) {
                             return value.toLocaleString();
                         }
                     },
                     grid: {
-                        color: 'rgba(139, 115, 85, 0.1)'
+                        color: colors.grid
                     }
                 },
                 x: {
                     ticks: {
-                        color: '#4A4238'
+                        color: colors.axisText
                     },
                     grid: {
                         display: false
@@ -203,7 +266,9 @@ function initializeBusinessChart() {
     gradient.addColorStop(0, 'rgba(218, 165, 32, 0.6)');
     gradient.addColorStop(1, 'rgba(107, 107, 107, 0.3)');
 
-    const businessChart = new Chart(ctx, {
+    const colors = getChartTheme();
+
+    businessChart = new Chart(ctx, {
         type: 'line',
         data: {
             labels: businessData.years,
@@ -230,10 +295,10 @@ function initializeBusinessChart() {
                     display: false
                 },
                 tooltip: {
-                    backgroundColor: 'rgba(92, 71, 66, 0.9)',
-                    titleColor: '#F5F1E8',
-                    bodyColor: '#F5F1E8',
-                    borderColor: '#D4A574',
+                    backgroundColor: colors.tooltipBg,
+                    titleColor: colors.tooltipText,
+                    bodyColor: colors.tooltipText,
+                    borderColor: colors.tooltipBorder,
                     borderWidth: 2,
                     padding: 12,
                     displayColors: false
@@ -249,19 +314,19 @@ function initializeBusinessChart() {
                             size: 12,
                             weight: '600'
                         },
-                        color: '#5C4742'
+                        color: colors.axisTitle
                     },
                     ticks: {
-                        color: '#4A4238',
+                        color: colors.axisText,
                         stepSize: 2
                     },
                     grid: {
-                        color: 'rgba(139, 115, 85, 0.1)'
+                        color: colors.grid
                     }
                 },
                 x: {
                     ticks: {
-                        color: '#4A4238'
+                        color: colors.axisText
                     },
                     grid: {
                         display: false

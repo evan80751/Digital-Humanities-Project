@@ -1,19 +1,21 @@
 # Boom and Bust: Economic Cycles in Iliff, Colorado (1900-2020)
 
-Digital Humanities project by Evan for ENGL 326, Kansas State University
+Digital Humanities project by Evan Jelle for ENGL 326, Kansas State University
 
 ## About This Project
 
-For my final DH project, I decided to visualize the economic history of Iliff, Colorado - a tiny agricultural town that went through some pretty dramatic boom and bust cycles over the past 120 years. I got interested in this after working on the Wikipedia article for the town and realizing there were all these interesting patterns that were hard to explain just through writing.
+For my final DH project, I visualized the economic history of Iliff, Colorado - a small agricultural town that experienced dramatic boom and bust cycles over the past 120 years. After working on the Wikipedia article for the town, I realized there were patterns in the data that were difficult to convey through traditional narrative alone.
 
-The idea was to use data visualization to show what actually happened to small agricultural towns in the Great Plains when things like railroads, sugar factories, and interstate highways came and went. This project uses Census data, agricultural statistics, and historical events to tell the story.
+This project uses data visualization to demonstrate what happened to small agricultural towns in the Great Plains when external forces like railroads, sugar factories, and interstate highways shaped their economic trajectories. The visualizations integrate Census data, agricultural statistics, and historical events to reveal these patterns.
 
 ## What's Included
 
-- **Population chart** - Shows how the population changed from 1900-2020 (spoiler: it's a roller coaster)
-- **Sugar beet industry chart** - The sugar beet business basically made and then broke this town
-- **Interactive timeline** - Click on events to see how each one impacted the town's economy
-- **Responsive design** - Works on phones, tablets, and computers
+- **Main visualization page** - Interactive charts showing population trends, sugar beet agriculture, and business decline
+- **Photo gallery** - Six historical images documenting Iliff's history from John Wesley Iliff to modern infrastructure
+- **Interactive timeline** - Filterable events by category (infrastructure, industry, natural disasters, demographics)
+- **Detailed sources page** - Complete bibliography with all references from Wikipedia research
+- **Dark/light mode toggle** - Accessible theme switching with improved readability
+- **Responsive design** - Optimized for desktop, tablet, and mobile viewing
 
 ## Tech Stack
 
@@ -37,13 +39,17 @@ Or just double-click the file.
 
 ```
 /
-├── index.html          # Main page
+├── index.html              # Main visualization page
+├── gallery.html            # Historical photo gallery
+├── sources.html            # Complete bibliography and references
 ├── css/
-│   └── style.css      # All the styling (went with earth tones)
+│   └── style.css          # Styling with earth tones and dark mode support
 ├── js/
-│   ├── data.js        # Census data and event information
-│   └── visualizations.js  # Chart code
-└── README.md          # This file
+│   ├── data.js            # Census data and historical event information
+│   ├── visualizations.js  # Chart.js configurations and theme management
+│   └── theme.js           # Dark mode toggle and settings menu
+├── images/                 # Historical photographs and maps
+└── README.md              # Project documentation
 ```
 
 ## Deploying to GitHub Pages
@@ -69,31 +75,38 @@ git push -u origin main
 
 ## Data Sources
 
-- U.S. Census Bureau (population data from 1900-2020)
-- Colorado Encyclopedia
-- U.S. Geological Survey (for the 1965 flood info)
-- National Weather Service (1949 blizzard)
-- Wikipedia article I edited for class
+All sources compiled during Wikipedia article research:
+- U.S. Census Bureau (decennial census data 1900-2020)
+- Colorado Encyclopedia (History Colorado)
+- U.S. Geological Survey (1965 South Platte River flood documentation)
+- National Weather Service (1949 Colorado blizzard records)
+- Colorado Department of Transportation (Interstate 76 history)
+- Logan County historical records (sugar beet acreage data)
+- Complete bibliography available on sources.html page
 
 ## Why This is Digital Humanities
 
-Instead of just writing a traditional paper about Iliff's history, I used computational methods to visualize the data and reveal patterns. The charts make it way easier to see how external forces (Interstate 76 bypass, sugar factory closure, etc.) directly impacted population and economic health. It's applying digital tools to humanistic questions about how small towns rise and fall.
+Rather than writing a traditional historical narrative, this project applies computational methods to visualize economic patterns across 120 years. The interactive charts reveal how infrastructure decisions, natural disasters, and agricultural industry shifts determined the fate of small agricultural communities. By making these patterns visible through data visualization, the project demonstrates the value of digital tools for humanistic inquiry - showing not just what happened to Iliff, but why small agricultural towns across America followed similar trajectories.
 
 ## What I Learned
 
 Working on this project taught me:
-- How to use Chart.js (it's actually pretty straightforward once you get the hang of it)
-- Data visualization can reveal things that narrative history can't show as clearly
-- Small agricultural towns across the Great Plains have really similar stories - they all got hit by the same forces (highway bypasses, agricultural consolidation, factory closures)
-- Making things responsive is harder than I thought
+- Chart.js configuration and theming for accessible data visualization
+- How to implement dynamic theme switching that updates chart colors in real-time
+- Data visualization reveals patterns that traditional narrative struggles to convey effectively
+- Small agricultural towns across the Great Plains share remarkably similar economic trajectories shaped by external forces beyond local control
+- Responsive design requires careful consideration of mobile, tablet, and desktop layouts
+- Historical images complement quantitative data by providing visual context
 
-## Future Ideas
+## Implementation Features
 
-If I had more time, I'd add:
-- Comparison with other Colorado towns
-- More detailed business data
-- Photos from different eras
-- Maybe oral history clips from residents
+Technical elements include:
+- CSS custom properties for consistent theming across light and dark modes
+- LocalStorage for persistent theme preferences
+- Chart.js with custom tooltips and annotations for historical events
+- JavaScript event delegation for timeline filters
+- Sticky navigation with scroll offset compensation
+- Hamburger menu for settings access across all device sizes
 
 ## Assignment Info
 
