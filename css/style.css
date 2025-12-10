@@ -912,33 +912,33 @@ footer p {
     }
 
     .nav-bar {
-        flex-direction: column;
-        align-items: stretch;
+        flex-direction: row;
+        align-items: center;
     }
 
     .nav-container {
-        order: 2;
-        width: 100%;
-        justify-content: center;
-        flex-wrap: wrap;
-        overflow: visible;
-        gap: 0.25rem 0.75rem;
-        padding: 0.25rem 0.75rem 0.75rem;
+        order: initial;
+        width: auto;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 0.5rem;
+        padding: 0.75rem 1rem;
     }
 
     .nav-link {
-        flex: 1 1 45%;
-        text-align: center;
-        white-space: normal;
-        padding: 0.4rem 0.5rem;
-        font-size: 0.9rem;
+        flex: none;
+        text-align: left;
+        white-space: nowrap;
+        padding: 0.5rem 0.75rem;
+        font-size: 0.85rem;
     }
 
     .nav-controls {
-        order: 1;
-        width: 100%;
-        justify-content: flex-end;
-        padding: 0.5rem 0.75rem 0.25rem;
+        order: initial;
+        width: auto;
+        justify-content: center;
+        padding: 0.75rem 1rem;
     }
 }
 
