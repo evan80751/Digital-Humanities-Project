@@ -23,6 +23,15 @@ const businessData = {
 // Organized by category: infrastructure, industry, disaster, demographics
 const timelineEvents = [
     {
+        date: '1831-1878',
+        title: 'John Wesley Iliff: The Cattle King of Colorado',
+        description: 'John Wesley Iliff built a cattle empire in northeastern Colorado, owning approximately 35,000 head of cattle and 15,558 acres.',
+        impact: 'Iliff pioneered the open-range cattle industry in Colorado, establishing the economic foundation for the region. His success demonstrated the viability of large-scale ranching in northeastern Colorado, attracting settlers and investment. The town of Iliff was named in his honor, recognizing his transformative impact on the area\'s development.',
+        category: 'demographics',
+        image: 'images/JohnWesleyIliff.jpg',
+        imageCaption: 'John Wesley Iliff (1831-1878), known as the "Cattle King of Colorado," for whom the town of Iliff was named.'
+    },
+    {
         date: '1881',
         title: 'Union Pacific Railroad Completed',
         description: 'LaSalle-Julesburg line provided crucial transportation for cattle and agricultural products.',

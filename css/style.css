@@ -608,14 +608,15 @@ section {
     border-radius: 6px;
     overflow: hidden;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    background-color: var(--light-tan);
 }
 
 .timeline-image img {
     width: 100%;
     height: auto;
     display: block;
-    max-height: 300px;
-    object-fit: cover;
+    max-height: 340px;
+    object-fit: contain;
 }
 
 .image-caption {
@@ -697,6 +698,27 @@ section {
 
 .sources-list a {
     color: var(--sky-blue);
+}
+
+.wiki-link {
+    margin-top: 1rem;
+    padding: 0.85rem 1rem;
+    border-left: 4px solid var(--wheat-gold);
+    background-color: var(--off-white);
+    border-radius: 6px;
+    font-family: 'Helvetica Neue', sans-serif;
+    color: var(--text-medium);
+}
+
+.wiki-link a {
+    color: var(--sky-blue);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+}
+
+.wiki-link a:hover {
+    border-bottom: 1px solid var(--sky-blue);
 }
 
 /* Footer */
@@ -864,12 +886,16 @@ footer p {
         gap: 2rem;
     }
 
-    .banner-image {
-        max-height: 250px;
+    .header-banner {
+        height: 50vh;
+        min-height: 260px;
+        max-height: 320px;
     }
 
-    .header-banner {
-        max-height: 250px;
+    .banner-image {
+        height: 100%;
+        max-height: 320px;
+        object-position: center 35%;
     }
 
     header h1 {
@@ -877,7 +903,12 @@ footer p {
     }
 
     .header-content {
-        padding: 1rem;
+        padding: 1.25rem;
+        width: 94%;
+    }
+
+    .timeline-image img {
+        max-height: 260px;
     }
 
     .nav-bar {
