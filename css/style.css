@@ -603,6 +603,31 @@ section {
     display: block;
 }
 
+.timeline-image {
+    margin-bottom: 1rem;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.timeline-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-height: 300px;
+    object-fit: cover;
+}
+
+.image-caption {
+    font-size: 0.85rem;
+    font-style: italic;
+    color: var(--text-light);
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    background-color: var(--light-tan);
+    border-radius: 4px;
+}
+
 .timeline-note {
     text-align: center;
     font-style: italic;
@@ -971,4 +996,9 @@ body.dark-mode .phase-card h3 {
 body.dark-mode .phase-card p,
 body.dark-mode .context-content {
     color: #E8DCC8;
+}
+
+body.dark-mode .image-caption {
+    background-color: #4A4238;
+    color: #D4C4B0;
 }

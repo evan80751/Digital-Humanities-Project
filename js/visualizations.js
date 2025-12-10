@@ -348,6 +348,13 @@ function initializeTimeline() {
         eventDiv.setAttribute('data-index', index);
         eventDiv.setAttribute('data-category', event.category);
 
+        const imageHtml = event.image ? `
+            <div class="timeline-image">
+                <img src="${event.image}" alt="${event.title}" />
+                ${event.imageCaption ? `<p class="image-caption">${event.imageCaption}</p>` : ''}
+            </div>
+        ` : '';
+
         eventDiv.innerHTML = `
             <div class="timeline-date">
                 ${event.date}
@@ -356,6 +363,7 @@ function initializeTimeline() {
             <h3 class="timeline-title">${event.title}</h3>
             <p class="timeline-description">${event.description}</p>
             <div class="timeline-impact">
+                ${imageHtml}
                 <strong>Impact:</strong> ${event.impact}
             </div>
         `;
