@@ -1051,3 +1051,8 @@ body.dark-mode .image-caption {
     background-color: #4A4238;
     color: #D4C4B0;
 }
+
+body.dark-mode .byline {
+    color: #F8F3E2;
+    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.85);
+}
