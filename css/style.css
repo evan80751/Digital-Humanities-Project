@@ -880,16 +880,34 @@ footer p {
         padding: 1rem;
     }
 
+    .nav-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
     .nav-container {
-        justify-content: flex-start;
-        overflow-x: auto;
-        flex-wrap: nowrap;
+        order: 2;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        overflow: visible;
+        gap: 0.25rem 0.75rem;
+        padding: 0.25rem 0.75rem 0.75rem;
     }
 
     .nav-link {
-        white-space: nowrap;
-        padding: 0.5rem 0.75rem;
-        font-size: 0.85rem;
+        flex: 1 1 45%;
+        text-align: center;
+        white-space: normal;
+        padding: 0.4rem 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    .nav-controls {
+        order: 1;
+        width: 100%;
+        justify-content: flex-end;
+        padding: 0.5rem 0.75rem 0.25rem;
     }
 }
 
